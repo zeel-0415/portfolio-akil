@@ -1,6 +1,3 @@
-Sure bro! Here's a **professional and developer-friendly `README.md`** file tailored for your animated, coding-themed personal portfolio built with **React + TypeScript + Framer Motion + TailwindCSS + Lottie + Devicon** and more.
-
----
 
 ### ✅ `README.md` — *Akil Pathan's Developer Portfolio*
 
