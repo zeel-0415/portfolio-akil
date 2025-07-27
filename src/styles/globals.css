@@ -1,0 +1,181 @@
+/* Design System Variables */
+:root {
+  /* Colors */
+  --color-primary: #0b0b1f; /* Dark background */
+  --color-secondary: #1a1a2a; /* Card background */
+  --color-accent: #00bcd4; /* Cyan accent */
+  --color-text: #ffffff;
+  --color-text-secondary: #b0bec5;
+  --color-border: #37474f;
+  --color-highlight: #ffca28; /* Yellow for accents like JS box */
+  --color-error: #f44336; /* Error state */
+  --color-success: #4caf50; /* Success state */
+
+  /* Dark Mode (optional, can be toggled with JS or media query) */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #0d0d22;
+      --color-secondary: #1e1e33;
+      --color-text: #e0e0e0;
+      --color-text-secondary: #a0a0b0;
+    }
+  }
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+
+  /* Typography */
+  --font-size-base: 16px;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-sm: 0.875rem;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 10px rgba(0, 188, 212, 0.3);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.3s ease-in-out;
+}
+
+/* Reset with Enhanced Cross-Browser Support */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  color: #26c6da;
+  outline: 2px solid transparent; /* Prevents outline overlap */
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Responsive Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+  width: 100%;
+}
+
+/* Additional Breakpoints */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  h1 { font-size: var(--font-size-h2); }
+  h2 { font-size: var(--font-size-h3); }
+  h3 { font-size: var(--font-size-base); }
+}
+
+/* Smooth Scroll and Performance */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Accessibility Enhancements */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-accent { color: var(--color-accent); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.transition { transition: all var(--transition-slow); }
+.hover\:scale-105:hover { transform: scale(1.05); }
