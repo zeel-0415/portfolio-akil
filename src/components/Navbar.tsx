@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
